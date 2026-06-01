@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>校園生態活動調查課程 - 互動簡報指引</title>
+  <meta name="description" content="專為國中自然課設計之校園生態與植物生態調查互動式教師引導簡報。內建計時器、pH模擬、食物網互動及動物圖鑑。">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Outfit for English/modern UI, Noto Sans TC for traditional Chinese -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- App Container -->
+  <div class="app-container">
+
+    <!-- Header / Control Panel -->
+    <header class="app-header">
+      <div class="header-left">
+        <button id="toggle-sidebar" class="btn-icon" title="開啟/關閉課程大綱 (鍵盤 M)">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="logo">
+          <span class="logo-badge">Ecology</span>
+          <h1 class="logo-title">校園生態活動調查</h1>
+        </div>
+      </div>
+      
+      <div class="header-center">
+        <div class="slide-indicator">
+          Slide <span id="current-slide-num">1</span> / <span id="total-slides-num">25</span>
+        </div>
+        <div class="current-session-tag" id="session-tag">第一堂</div>
+      </div>
+
+      <div class="header-right">
+        <button id="btn-prev" class="btn-control" title="上一張 (鍵盤 Left Arrow)">
+          <i class="fa-solid fa-chevron-left"></i> 上一張
+        </button>
+        <button id="btn-next" class="btn-control highlight" title="下一張 (鍵盤 Right Arrow)">
+          下一張 <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <button id="toggle-reference" class="btn-icon" title="開啟/關閉學生與課本參考 (鍵盤 R)">
+          <i class="fa-solid fa-book-open"></i>
+          <span class="ref-badge" id="ref-count">對照</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <div class="workspace">
+
+      <!-- Left Sidebar: Course Syllabus Drawer -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <h3><i class="fa-solid fa-compass"></i> 課程大綱與導航</h3>
+        </div>
+        <nav class="syllabus-nav">
+          <!-- Session 1 -->
+          <div class="syllabus-section">
+            <div class="section-title">第一堂：課程介紹與植物探索</div>
+            <ul class="slide-list">
+              <li class="slide-item active" data-slide="1">1. 啟航！校園生態調查</li>
+              <li class="slide-item" data-slide="2">2. 四堂課學習旅程</li>
+              <li class="slide-item" data-slide="3">3. 第一堂任務概覽</li>
+              <li class="slide-item" data-slide="4">4. Canva 生態簡報任務啟動</li>
+              <li class="slide-item" data-slide="5">5. 15分鐘植物探索挑戰！⏱️</li>
+              <li class="slide-item" data-slide="6">6. 雲端傳送門：個人照片上傳</li>
+            </ul>
+          </div>
+
+          <!-- Session 2 -->
+          <div class="syllabus-section">
+            <div class="section-title">第二堂：資料整理與 AI 植物辨識</div>
+            <ul class="slide-list">
+              <li class="slide-item" data-slide="7">7. 第二堂任務概覽</li>
+              <li class="slide-item" data-slide="8">8. 生物收集冊：整理植物相片</li>
+              <li class="slide-item" data-slide="9">9. AI 辨識神器大解密</li>
+              <li class="slide-item" data-slide="10">10. 第三方查證的重要性</li>
+              <li class="slide-item" data-slide="11">11. 互動特徵查證遊戲 🌿</li>
+            </ul>
+          </div>
+
+          <!-- Session 3 -->
+          <div class="syllabus-section">
+            <div class="section-title">第三堂：環境因子與非植物搜集</div>
+            <ul class="slide-list">
+              <li class="slide-item" data-slide="12">12. 第三堂任務概覽</li>
+              <li class="slide-item" data-slide="13">13. 課本實驗說明與環境測量方法</li>
+              <li class="slide-item" data-slide="14">14. 互動思考：環境因子的影響 ❓</li>
+              <li class="slide-item" data-slide="15">15. 互動實驗室：土壤 pH 檢測 🧪</li>
+              <li class="slide-item" data-slide="16">16. 尋找校園動物與真菌</li>
+              <li class="slide-item" data-slide="17">17. 東興校園動物圖鑑展廊 🦅</li>
+              <li class="slide-item" data-slide="18">18. 20分鐘收集挑戰！⏱️</li>
+            </ul>
+          </div>
+
+          <!-- Session 4 -->
+          <div class="syllabus-section">
+            <div class="section-title">第四堂：收集冊完成與生態分析</div>
+            <ul class="slide-list">
+              <li class="slide-item" data-slide="19">19. 第四堂任務概覽</li>
+              <li class="slide-item" data-slide="20">20. 生物收集冊：最終完整版</li>
+              <li class="slide-item" data-slide="21">21. 生態系的靈魂：食物網</li>
+              <li class="slide-item" data-slide="22">22. 互動連線：食物網連線沙盒 🕸️</li>
+              <li class="slide-item" data-slide="23">23. 生態分析：健全與穩定性</li>
+              <li class="slide-item" data-slide="24">24. 生態建議與具體行動</li>
+              <li class="slide-item" data-slide="25">25. 課程終點與反思回饋</li>
+            </ul>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Slides Viewport -->
+      <main class="slides-viewport">
+        <div class="slides-container" id="slides-container">
+
+          <!-- ==================== SESSION 1 SLIDES ==================== -->
+          
+          <!-- Slide 1: Cover -->
+          <section class="slide active" id="slide-1" data-session="第一堂" data-ref-type="canva" data-ref-page="1">
+            <div class="slide-content centered">
+              <div class="slide-badge"><i class="fa-solid fa-leaf"></i> 自然科探究與實作</div>
+              <h2 class="title-primary">校園植物與動物生態調查</h2>
+              <p class="subtitle-primary">用科技輔助、以理智查證，解鎖校園生態密碼</p>
+              
+              <div class="cover-card">
+                <div class="card-item">
+                  <i class="fa-solid fa-mobile-screen-button"></i>
+                  <h4>照片記錄</h4>
+                  <p>收集最真實的影像</p>
+                </div>
+                <div class="card-item">
+                  <i class="fa-solid fa-robot"></i>
+                  <h4>AI 植物辨識</h4>
+                  <p>智慧科技輔助鑑定</p>
+                </div>
+                <div class="card-item">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <h4>第三方查證</h4>
+                  <p>雙重求證、科學求真</p>
+                </div>
+                <div class="card-item">
+                  <i class="fa-solid fa-network-wired"></i>
+                  <h4>生態分析評價</h4>
+                  <p>探究食物網與健全性</p>
+                </div>
+              </div>
+              <div class="tips-bar">
+                <p><i class="fa-solid fa-lightbulb"></i> <strong>提示：</strong>本課程最終將使用 <strong>Canva 簡報</strong> 呈現你們的調查小冊子。</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 2: Course Agenda -->
+          <section class="slide" id="slide-2" data-session="第一堂" data-ref-type="canva" data-ref-page="2">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-road"></i> 四堂課學習旅程</h2>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="time-badge">第 1 堂</div>
+                  <div class="time-content">
+                    <h3>課程介紹與植物探索</h3>
+                    <ul>
+                      <li>認識生態調查方法與工具</li>
+                      <li>15分鐘校園植物照片收集</li>
+                      <li>上傳原始照片至雲端</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="time-badge">第 2 堂</div>
+                  <div class="time-content">
+                    <h3>資料整理與 AI 辨識</h3>
+                    <ul>
+                      <li>整理上傳的植物照片</li>
+                      <li>使用 AI 工具辨識植物</li>
+                      <li>進行植物特徵「三方查證」</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="time-badge">第 3 堂</div>
+                  <div class="time-content">
+                    <h3>環境因子與動物搜尋</h3>
+                    <ul>
+                      <li>20分鐘收集環境物理因子</li>
+                      <li>尋找校園動物、真菌並拍照</li>
+                      <li>上傳第二批照片至雲端</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="time-badge">第 4 堂</div>
+                  <div class="time-content">
+                    <h3>收集冊完成與生態分析</h3>
+                    <ul>
+                      <li>完成生物收集冊照片貼附</li>
+                      <li>建構食物網並分析生態健全性</li>
+                      <li>撰寫校園生態改善具體建議</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 3: Session 1 Overview -->
+          <section class="slide" id="slide-3" data-session="第一堂" data-ref-type="canva" data-ref-page="2">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-star"></i> 第一堂課：任務目標</h2>
+              <div class="grid-2col">
+                <div class="content-left">
+                  <div class="interactive-box mission">
+                    <h3><i class="fa-solid fa-flag-checkered"></i> 今日要完成的事：</h3>
+                    <ul class="bullet-list-large">
+                      <li>理解生態調查的目的與方法。</li>
+                      <li>各自選定並確認今天想去探查的校園區域。</li>
+                      <li>進行 <strong>15分鐘戶外植物探索</strong>。</li>
+                      <li>每人親自拍攝至少 5-10 種植物。</li>
+                      <li>將所有拍攝照片上傳至個人雲端硬碟或 Classroom。</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="content-right text-center">
+                  <div class="action-alert">
+                    <i class="fa-solid fa-camera-retro large-icon animate-bounce"></i>
+                    <h3>相機準備好！</h3>
+                    <p class="text-large">拍攝秘訣：照片需要清晰、拍到葉片特寫、葉子排列方式及花果，方便後續 AI 辨識！</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 4: Canva Template Intro (Individual) -->
+          <section class="slide" id="slide-4" data-session="第一堂" data-ref-type="canva" data-ref-page="2">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-file-powerpoint"></i> Canva 簡報任務：生態調查引導</h2>
+              <div class="grid-2col">
+                <div class="content-left">
+                  <ul class="bullet-list-large">
+                    <li>每位同學要利用 <strong>Canva 網站的簡報模版</strong> 來完成個人的調查小冊子。</li>
+                    <li>簡報包含四大核心行動 (Actions)：
+                      <ol class="action-list-styled">
+                        <li step="1"><strong>環境調查</strong>：記錄溫度、濕度、光照、土壤 pH 等物理環境。</li>
+                        <li step="2"><strong>生物調查</strong>：整理生物照片、使用 AI 鑑定並進行三方查證。</li>
+                        <li step="3"><strong>生態分析</strong>：建構校園食物網並分析生態健全度。</li>
+                        <li step="4"><strong>生態建議</strong>：為學校生態健全度提出兩項改善改進點。</li>
+                      </ol>
+                    </li>
+                  </ul>
+                </div>
+                <div class="content-right">
+                  <div class="action-alert info">
+                    <h4><i class="fa-solid fa-tablet-screen-button"></i> iPad 領取與個人拍照提示：</h4>
+                    <p>每位同學各自作業，獨立記錄：</p>
+                    <ul class="bullet-list">
+                      <li><strong>領取與測試</strong>：每人領取一台 iPad，確認網路連線正常且相機功能運作。</li>
+                      <li><strong>手穩對焦</strong>：拍照時雙手拿穩，近焦對準葉片特徵、葉脈或花果。</li>
+                      <li><strong>多拍備用</strong>：每種植物拍 2-3 張（特寫 + 全景），上傳後方便後續 AI 辨識。</li>
+                      <li><strong>獨立完成</strong>：每人需親自記錄至少 5-10 種植物照片。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 5: 15-Minute Fieldwork Timer -->
+          <section class="slide" id="slide-5" data-session="第一堂" data-ref-type="canva" data-ref-page="4">
+            <div class="slide-content centered">
+              <div class="slide-badge warning"><i class="fa-solid fa-person-running animate-pulse"></i> 實作挑戰</div>
+              <h2 class="title-primary">任務一：15 分鐘校園植物相片收集</h2>
+              <p class="subtitle-primary">走進校園，收集不同植物的葉、花、果實清晰照片。準備倒數計時！</p>
+
+              <!-- Stopwatch Timer Component -->
+              <div class="timer-container" data-duration="900">
+                <div class="timer-display">15:00</div>
+                <div class="timer-progress-bar"><div class="timer-progress-fill"></div></div>
+                <div class="timer-controls">
+                  <button class="btn-timer start"><i class="fa-solid fa-play"></i> 開始計時</button>
+                  <button class="btn-timer pause" disabled><i class="fa-solid fa-pause"></i> 暫停</button>
+                  <button class="btn-timer reset"><i class="fa-solid fa-rotate-left"></i> 重置</button>
+                </div>
+              </div>
+
+              <div class="grid-3col text-left margin-top-20">
+                <div class="guide-card">
+                  <h4><i class="fa-solid fa-leaf"></i> 拍照技巧</h4>
+                  <p>近焦對準「一片完整葉片」及「葉脈與邊緣」，並拍下葉子在莖上的排列方式（互生/對生）。</p>
+                </div>
+                <div class="guide-card">
+                  <h4><i class="fa-solid fa-image"></i> 照片質量</h4>
+                  <p>避免晃動與過曝。每種植物多拍幾張局部特寫，以便後續上傳給 AI 進行大致判定。</p>
+                </div>
+                <div class="guide-card">
+                  <h4><i class="fa-solid fa-triangle-exclamation"></i> 安全守則</h4>
+                  <p>不跨越圍籬，不攀爬高處。不要強行採摘植物，愛護校園生命，也保護好自己。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 6: Photo Upload Guide -->
+          <section class="slide" id="slide-6" data-session="第一堂" data-ref-type="canva" data-ref-page="4">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-cloud-arrow-up"></i> 雲端傳送門：個人照片上傳</h2>
+              <div class="grid-2col">
+                <div class="content-left">
+                  <div class="interactive-box">
+                    <h3><i class="fa-solid fa-circle-info"></i> 行動指南：</h3>
+                    <ol class="action-list-styled">
+                      <li step="1">回到教室後，將 iPad 連接至校園網路。</li>
+                      <li step="2">登入<strong>個人的 Google 雲端硬碟</strong>或 <strong>Google Classroom</strong>。</li>
+                      <li step="3">進入<strong>「校園生態調查」照片上傳區</strong>。</li>
+                      <li step="4">將今日拍攝的所有植物相片原圖上傳，請命名為 `學號座號_植物01.jpg`。</li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="content-right">
+                  <div class="action-alert warning">
+                    <h4><i class="fa-solid fa-triangle-exclamation"></i> 重要提醒：</h4>
+                    <ul class="bullet-list">
+                      <li><strong>保留原始檔案</strong>：即使拍得不好，也先保留。有時候模糊原圖中某個角落的特徵在鑑定時非常重要！</li>
+                      <li><strong>按指示命名</strong>：上傳時做好備註與編號，方便第二堂整理自己的收集冊。</li>
+                    </ul>
+                  </div>
+                  <div class="upload-progress-demo">
+                    <div class="up-bar"><i class="fa-solid fa-image"></i> 05號_植物01.png <span class="percent">100%</span></div>
+                    <div class="up-bar"><i class="fa-solid fa-image"></i> 05號_植物02.png <span class="percent">100%</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- ==================== SESSION 2 SLIDES ==================== -->
+
+          <!-- Slide 7: Session 2 Overview -->
+          <section class="slide" id="slide-7" data-session="第二堂" data-ref-type="canva" data-ref-page="5">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-star"></i> 第二堂課：任務目標</h2>
+              <div class="grid-2col">
+                <div class="content-left">
+                  <div class="interactive-box mission">
+                    <h3><i class="fa-solid fa-flag-checkered"></i> 今日要完成的事：</h3>
+                    <ul class="bullet-list-large">
+                      <li>整理第一堂課上傳至個人雲端硬碟的植物照片。</li>
+                      <li>使用 <strong>Gemini 或其他 AI 工具 (如 ChatGPT)</strong> 進行大致辨識與特徵判斷。</li>
+                      <li>針對 AI 的猜測，使用圖鑑或文獻進行<strong>「第三方查證」</strong>。</li>
+                      <li>記錄植物的形態特徵（葉序、葉脈、邊緣特徵）。</li>
+                      <li>將查證判定後的中文名與相片，貼入個人 <strong>Canva 生物收集冊</strong>。</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="content-right text-center">
+                  <div class="action-alert success">
+                    <i class="fa-solid fa-robot large-icon animate-pulse text-green"></i>
+                    <h3>AI 真的百分之百正確嗎？</h3>
+                    <p class="text-large">AI 辨識結果只能當作參考！科學探究講求實證，必須進行葉序、葉脈等特徵核對，這才是真正的三方求證！</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 8: Completing Biological Collection Book (Individual) -->
+          <section class="slide" id="slide-8" data-session="第二堂" data-ref-type="canva" data-ref-page="4">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-images"></i> 生物收集冊：整理植物相片</h2>
+              <div class="grid-2col">
+                <div class="content-left">
+                  <p class="text-large">請打開個人的 Canva 簡報第 4 頁的<strong>「生物收集冊」</strong>格。</p>
+                  <ul class="bullet-list-large">
+                    <li><strong>一種一張</strong>：每一格貼上一張親自拍攝的不同植物之最清晰相片。</li>
+                    <li><strong>AI 輔助大致判定</strong>：相片中的植物，可透過 AI 工具（如 Gemini）進行初步辨識與大致判定。大家盡力找出植物名稱即可（若無法完全確定，可以記錄至『屬』或『科』！）。</li>
+                    <li><strong>探究學習</strong>：植物分類繁多，盡力判定即是科學求真的好練習，不必強求 100% 準確！</li>
+                  </ul>
+                </div>
+                <div class="content-right">
+                  <div class="highlight-panel">
+                    <h4><i class="fa-solid fa-folder-open"></i> 個人整理步驟：</h4>
+                    <ol class="action-list-styled">
+                      <li step="1">登入個人的雲端硬碟/Classroom 下載自己拍攝的照片。</li>
+                      <li step="2">逐一將植物照片貼附至 Canva 生物收集冊對應的位置中。</li>
+                      <li step="3">開啟 Gemini 等 AI 工具，輸入提示詞 (Prompt) 輔助特徵判定與大致鑑定。</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 9: AI Tools for Identification -->
+          <section class="slide" id="slide-9" data-session="第二堂" data-ref-type="canva" data-ref-page="5">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-wand-magic-sparkles"></i> AI 辨識神器大解密</h2>
+              <div class="grid-2col">
+                <div class="content-left">
+                  <div class="tool-card">
+                    <div class="tool-logo"><i class="fa-solid fa-brain color-green"></i> <strong>生成式多模態 AI (Gemini / ChatGPT)</strong></div>
+                    <p>將拍好的植物特寫上傳，輸入精準提示詞 (Prompt) 進行對話，AI 將自動分析影像並給出中文名、學名、科屬特徵以及生態資訊！</p>
+                    <span class="badge secondary">優點：多模態影像分析、特徵描述完整</span>
+                  </div>
+                  <div class="tool-card margin-top-20">
+                    <div class="tool-logo"><i class="fa-solid fa-magnifying-glass-leaf color-green"></i> <strong>iNaturalist 台灣資料庫</strong></div>
+                    <p>全球最大型的公民科學社群。擁有高度精準的植物特徵比對引擎與學術資料庫，是交叉比對與大致鑑定的超級幫手。</p>
+                    <span class="badge secondary">優點：生物學界專用、適合特徵校正</span>
+                  </div>
+                </div>
+                <div class="content-right">
+                  <div class="highlight-panel">
+                    <h4><i class="fa-solid fa-microscope"></i> AI 提示詞 (Prompt) 推薦：</h4>
+                    <p class="text-large">「請幫我辨識這張在台灣校園拍到的植物。請大致判斷其可能的<strong>中文俗名、科名與學名</strong>，並詳細列出它的<strong>葉序（互生/對生/輪生/叢生）</strong>與<strong>葉脈（平行脈/網狀脈）</strong>類型，作為查證比對參考。」</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 10: 3rd Party Verification -->
+          <section class="slide" id="slide-10" data-session="第二堂" data-ref-type="canva" data-ref-page="5">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-shield-halved"></i> 第三方查證：科學求真的精神</h2>
+              <div class="grid-2col">
+                <div class="content-left">
+                  <p class="text-large">AI 雖然聰明，但有時候會因為拍攝角度或相似葉型而<strong>「胡言亂語（幻覺）」</strong>。我們必須使用第三方資料進行核對！</p>
+                  
+                  <div class="action-alert info">
+                    <h4><i class="fa-solid fa-server"></i> 第三方權威查證網站推薦：</h4>
+                    <ul class="bullet-list">
+                      <li><strong>台灣野生植物資料庫</strong> (行政院特生中心)</li>
+                      <li><strong>iNaturalist 台灣社群資料庫</strong></li>
+                      <li><strong>國立自然科學博物館植物園資料網</strong></li>
+                      <li>實體參考書：自然課本、台灣常見植物圖鑑</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="content-right">
+                  <div class="interactive-box">
+                    <h4><i class="fa-solid fa-check-double"></i> 查證三步驟：</h4>
+                    <ol>
+                      <li><strong>AI 猜測</strong>：AI 說是「大花咸豐草」。</li>
+                      <li><strong>特徵比對</strong>：查閱植物庫「大花咸豐草」的特徵是否為：葉對生、羽狀複葉、鋸齒緣；花為白色舌狀花與黃色管狀花。</li>
+                      <li><strong>實物確認</strong>：放大觀察你們拍到的照片，特徵是否完全符合？若是，查證成功！</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 11: Botanical Features Game -->
+          <section class="slide" id="slide-11" data-session="第二堂" data-ref-type="canva" data-ref-page="5">
+            <div class="slide-content centered">
+              <div class="slide-badge secondary"><i class="fa-solid fa-puzzle-piece"></i> 互動遊戲</div>
+              <h2 class="title-primary">植物辨識特徵查證遊戲</h2>
+              <p class="subtitle-primary">你是優秀的植物學家嗎？點選正確的葉序與葉脈組合，找出對應的校園植物！</p>
+
+              <!-- Interactive Plant Verifier Card -->
+              <div class="verifier-card">
+                <div class="selector-group">
+                  <div class="selector-item">
+                    <label for="select-phyllotaxy"><strong>葉序 (Leaf Arrangement)</strong></label>
+                    <select id="select-phyllotaxy">
+                      <option value="none">-- 請選擇 --</option>
+                      <option value="alternate">互生 (Alternate)</option>
+                      <option value="opposite">對生 (Opposite)</option>
+                      <option value="whorled">輪生 (Whorled)</option>
+                      <option value="rosette">叢生 (Rosette / 根生)</option>
+                    </select>
+                  </div>
+                  <div class="selector-item">
+                    <label for="select-venation"><strong>葉脈 (Venation)</strong></label>
+                    <select id="select-venation">
+                      <option value="none">-- 請選擇 --</option>
+                      <option value="parallel">平行脈 (Parallel)</option>
+                      <option value="netted">網狀脈 (Netted / 掌狀/羽狀)</option>
+                    </select>
+                  </div>
+                  <div class="selector-item align-self-end">
+                    <button class="btn-control highlight" id="btn-verify-plant"><i class="fa-solid fa-wand-magic-sparkles"></i> 查明物種</button>
+                  </div>
+                </div>
+
+                <div class="verifier-result" id="verifier-result">
+                  <div class="result-placeholder">請在上方選擇植物的特徵，然後點擊「查明物種」按鈕進行查證比對。</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- ==================== SESSION 3 SLIDES ==================== -->
+
+          <!-- Slide 12: Session 3 Overview -->
+          <section class="slide" id="slide-12" data-session="第三堂" data-ref-type="canva" data-ref-page="3">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-star"></i> 第三堂課：任務目標</h2>
+              <div class="grid-2col">
+                <div class="content-left">
+                  <div class="interactive-box mission">
+                    <h3><i class="fa-solid fa-flag-checkered"></i> 今日要完成的事：</h3>
+                    <ul class="bullet-list-large">
+                      <li>實地測量一個指定棲地的<strong>環境因子</strong>（溫濕度、光照、土壤 pH）。</li>
+                      <li>在指定棲地中尋找<strong>動物、真菌</strong>等其他非植物生物。</li>
+                      <li>進行 <strong>20分鐘戶外綜合探查與拍照</strong>。</li>
+                      <li>上傳第二批照片（大氣數據、動物、真菌）至雲端個人資料區。</li>
+                      <li>在 Canva 簡報第 3 頁填寫該棲地的環境數據。</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="content-right text-center">
+                  <div class="action-alert info">
+                    <i class="fa-solid fa-temperature-half large-icon animate-bounce text-blue"></i>
+                    <h3>不只是生命，還有環境！</h3>
+                    <p class="text-large">非生物環境因子（溫度、光照、土壤酸鹼度）是限制與決定特定生物能夠在此生存與分布的關鍵條件！</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 13: Integrated Environmental Measurements -->
+          <section class="slide" id="slide-13" data-session="第三堂" data-ref-type="textbook" data-ref-page="1">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-book"></i> 課本實驗說明與環境測量方法</h2>
+              <div class="grid-2col">
+                <div class="content-left">
+                  <h3>實驗目的：</h3>
+                  <p class="text-large">實測校園中一個指定棲地的物理環境因子，觀察並記錄其中的生物組成，探討非生物因子對生物生存的影響。</p>
+                  
+                  <div class="tool-list">
+                    <h4><i class="fa-solid fa-toolbox"></i> 本次實驗工具箱與測量方法：</h4>
+                    <ul class="bullet-list">
+                      <li><strong>大氣溫濕度計</strong>：測量指定棲地大氣溫度與相對濕度。注意手不要握住感應器，靜置 1 分鐘後讀數。</li>
+                      <li><strong>照度計/照度APP</strong>：面向天空（避免陽光直射感測器）測量光照強度，記錄 Lux 值。</li>
+                      <li><strong>風速觀測</strong>：依據周遭環境觀察並估計風速級別（如無風、弱風、強風）。</li>
+                      <li><strong>土壤 pH 酸鹼度</strong>：採集地表下 5-10cm 的土壤，以約等體積土壤與蒸餾水混合攪拌，沉澱澄清後以玻璃棒沾取澄清液滴於試紙上進行判讀。</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="content-right">
+                  <div class="highlight-panel">
+                    <h4><i class="fa-solid fa-map-location-dot"></i> 調查棲地挑選說明：</h4>
+                    <p class="text-large"><strong>本次實驗統一調查一個指定棲地！</strong></p>
+                    <p>大家將集中力量在一個指定區域（例如校園向陽大草皮或背陰中庭）進行最精密的物理因子測量與生物種類全面搜尋，探討這單一環境如何塑造成目前的微生態系。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 14: Habitat Q&A -->
+          <section class="slide" id="slide-14" data-session="第三堂" data-ref-type="textbook" data-ref-page="1">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-circle-question"></i> 互動思考：環境因子的科學</h2>
+              
+              <div class="quiz-container" id="quiz-habitat">
+                <div class="quiz-question">
+                  Q. 在進行校園生態調查時，為什麼測量「非生物物理環境因子」（如光照、大氣溫濕度、土壤 pH）對於理解生物分布至關重要？
+                </div>
+                <div class="quiz-options">
+                  <div class="quiz-option" data-correct="false">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">張貼在簡報上的物理因子數據越高，生物的體型就會發育得越大。</span>
+                  </div>
+                  <div class="quiz-option" data-correct="true">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">因為非生物環境因子是限制特定生物分布、存活與生存繁衍的關鍵環境條件。</span>
+                  </div>
+                  <div class="quiz-option" data-correct="false">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">因為課本有教這項實驗，只要背出數值就能在考卷上拿到滿分。</span>
+                  </div>
+                  <div class="quiz-option" data-correct="false">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">因為物理因子可以讓植物顏色變好看，有利於簡報的美化排版。</span>
+                  </div>
+                </div>
+                <div class="quiz-feedback" style="display: none;"></div>
+              </div>
+
+              <div class="tips-bar margin-top-40">
+                <p><i class="fa-solid fa-chart-simple"></i> <strong>引導討論：</strong>請各組代表發表，你們預計測量到的指定棲地，其光照跟濕度可能存在什麼關聯性？</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 15: Interactive Soil pH Simulator -->
+          <section class="slide" id="slide-15" data-session="第三堂" data-ref-type="textbook" data-ref-page="2">
+            <div class="slide-content centered">
+              <div class="slide-badge warning"><i class="fa-solid fa-flask-vial animate-pulse"></i> 虛擬實驗室</div>
+              <h2 class="title-primary">土壤 pH 值檢測模擬實驗</h2>
+              <p class="subtitle-primary">動手模擬課本中的土壤檢測步驟，觀察廣用試紙的變色並判定酸鹼度！</p>
+
+              <!-- Soil pH Simulator Component -->
+              <div class="ph-simulator" id="ph-simulator">
+                <div class="sim-steps">
+                  <div class="sim-sample-select">
+                    <h4>1. 選擇土壤樣本：</h4>
+                    <button class="btn-sample" data-sample="grassland">樣本 A (向陽草地土壤)</button>
+                    <button class="btn-sample" data-sample="wetland">樣本 B (背陰潮濕水溝土)</button>
+                  </div>
+                  
+                  <div class="sim-action-area">
+                    <div class="beaker-container">
+                      <div class="beaker">
+                        <div class="liquid-soil" id="beaker-liquid"></div>
+                        <div class="glass-rod" id="glass-rod"></div>
+                      </div>
+                      <p id="beaker-status">請先點選上方土壤樣本</p>
+                    </div>
+
+                    <div class="control-panel-sim">
+                      <button class="btn-sim-action" id="btn-mix" disabled><i class="fa-solid fa-rotate animate-spin-hover"></i> 混合與攪拌</button>
+                      <button class="btn-sim-action" id="btn-dip" disabled><i class="fa-solid fa-droplet"></i> 玻璃棒沾取滴試紙</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sim-indicator">
+                  <h4>2. 廣用試紙顯色與 pH 對照表：</h4>
+                  <div class="indicator-strip-container">
+                    <div class="indicator-strip" id="indicator-strip">試紙</div>
+                  </div>
+                  <div class="ph-color-chart">
+                    <div class="ph-color-cell" data-ph="4" style="background-color: #E74C3C;">pH 4<br>強酸</div>
+                    <div class="ph-color-cell" data-ph="5" style="background-color: #E67E22;">pH 5<br>酸性</div>
+                    <div class="ph-color-cell" data-ph="6" style="background-color: #F1C40F;">pH 6<br>弱酸</div>
+                    <div class="ph-color-cell" data-ph="7" style="background-color: #2ECC71;">pH 7<br>中性</div>
+                    <div class="ph-color-cell" data-ph="8" style="background-color: #3498DB;">pH 8<br>弱鹼</div>
+                    <div class="ph-color-cell" data-ph="9" style="background-color: #2980B9;">pH 9<br>鹼性</div>
+                    <div class="ph-color-cell" data-ph="10" style="background-color: #9B59B6;">pH 10<br>強鹼</div>
+                  </div>
+                  <div id="ph-sim-result" class="ph-result-text"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 16: Search for Animals & Other Organisms -->
+          <section class="slide" id="slide-16" data-session="第三堂" data-ref-type="canva" data-ref-page="6">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-bug"></i> 搜尋非植物生物：動物與真菌</h2>
+              <div class="grid-2col">
+                <div class="content-left">
+                  <p class="text-large">除了綠色植物，棲地中還隱藏著多樣的動物（昆蟲、無脊椎動物、鳥類）與分解者（真菌、蕈類）！</p>
+                  
+                  <div class="interactive-box warning">
+                    <h4><i class="fa-solid fa-magnifying-glass"></i> 搜尋重點區：</h4>
+                    <ul class="bullet-list">
+                      <li><strong>落葉堆與腐木下方</strong>：馬陸、蚯蚓、小家蟻、蝸牛、甚至可能發現真菌（如蕈菇、木耳）。</li>
+                      <li><strong>花叢與草冠層</strong>：蝴蝶、椿象、蠅虎（跳蛛）、蜜蜂。</li>
+                      <li><strong>大樓牆角與水溝邊</strong>：蛾蚋、大蚊、幽靈蛛。</li>
+                      <li><strong>天空中與樹梢</strong>：白頭翁、麻雀、白尾八哥。</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="content-right">
+                  <div class="highlight-panel">
+                    <h4><i class="fa-solid fa-camera"></i> 動物拍照祕訣：</h4>
+                    <p>動物會移動！拍攝時：</p>
+                    <ul>
+                      <li>不要靠得太近或發出巨大聲響，避免嚇跑鳥類和蝴蝶。</li>
+                      <li>可以利用手機或平板的<strong>變焦（Zoom）</strong>功能進行遠距離拍攝。</li>
+                      <li>如果是微小昆蟲（如蚜蟲或小蛛），使用「微距模式」並保持相機穩定。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 17: Common Animals Gallery -->
+          <section class="slide" id="slide-17" data-session="第三堂" data-ref-type="canva" data-ref-page="6">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-images"></i> 東興國中校園常見動物圖鑑</h2>
+              
+              <div class="gallery-container">
+                <!-- Filter Tabs -->
+                <div class="gallery-tabs">
+                  <button class="btn-tab active" data-filter="all">全部生物</button>
+                  <button class="btn-tab" data-filter="birds">鳥類 (Birds)</button>
+                  <button class="btn-tab" data-filter="butterflies">蝶蛾類 (Butterflies)</button>
+                  <button class="btn-tab" data-filter="insects">昆蟲與陸生 (Insects)</button>
+                  <button class="btn-tab" data-filter="spiders">蜘蛛類 (Spiders)</button>
+                  <button class="btn-tab" data-filter="others">軟體與環節動物</button>
+                </div>
+
+                <!-- Horizontal Scroll Gallery -->
+                <div class="gallery-slider" id="animal-gallery">
+                  <!-- Generated by JS from textbook PPTX data -->
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 18: 20-Minute Fieldwork Timer -->
+          <section class="slide" id="slide-18" data-session="第三堂" data-ref-type="canva" data-ref-page="3">
+            <div class="slide-content centered">
+              <div class="slide-badge warning"><i class="fa-solid fa-person-running animate-pulse"></i> 實作挑戰</div>
+              <h2 class="title-primary">任務二：20 分鐘環境測量與動物搜尋</h2>
+              <p class="subtitle-primary">帶上測量工具與 iPad，完成指定棲地的物理因子記錄，並至少拍下 3 種動物或真菌！</p>
+
+              <!-- Stopwatch Timer Component -->
+              <div class="timer-container" data-duration="1200">
+                <div class="timer-display">20:00</div>
+                <div class="timer-progress-bar"><div class="timer-progress-fill"></div></div>
+                <div class="timer-controls">
+                  <button class="btn-timer start"><i class="fa-solid fa-play"></i> 開始計時</button>
+                  <button class="btn-timer pause" disabled><i class="fa-solid fa-pause"></i> 暫停</button>
+                  <button class="btn-timer reset"><i class="fa-solid fa-rotate-left"></i> 重置</button>
+                </div>
+              </div>
+
+              <div class="grid-3col text-left margin-top-20">
+                <div class="guide-card info">
+                  <h4><i class="fa-solid fa-clipboard-check"></i> 環境因子必記</h4>
+                  <p>指定調查棲地的：大氣溫濕度、光照 Lux、風速級別、土壤 pH，填入個人 Canva 簡報第 3 頁！</p>
+                </div>
+                <div class="guide-card info">
+                  <h4><i class="fa-solid fa-spider"></i> 動物相片收集</h4>
+                  <p>努力尋找至少 3 種不同分類的動物或真菌。在落葉堆、樹幹上仔細觀察，小心腳下！</p>
+                </div>
+                <div class="guide-card info">
+                  <h4><i class="fa-solid fa-cloud-arrow-up"></i> 個人照片上傳</h4>
+                  <p>回到教室後，登入個人硬碟或 Classroom，將第二批相片原圖上傳，準備好第四堂使用！</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- ==================== SESSION 4 SLIDES ==================== -->
+
+          <!-- Slide 19: Session 4 Overview -->
+          <section class="slide" id="slide-19" data-session="第四堂" data-ref-type="canva" data-ref-page="8">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-star"></i> 第四堂課：任務目標</h2>
+              <div class="grid-2col">
+                <div class="content-left">
+                  <div class="interactive-box mission">
+                    <h3><i class="fa-solid fa-flag-checkered"></i> 今日要完成的事：</h3>
+                    <ul class="bullet-list-large">
+                      <li>完成個人 Canva <strong>「生物收集冊」</strong>中動物與真菌相片的填入。</li>
+                      <li>根據指定棲地發現的所有生物，繪製並建構<strong>「校園食物網」</strong>。</li>
+                      <li>進行生態分析與評價：
+                        <ul>
+                          <li>校園食物網複雜嗎？理由為何？</li>
+                          <li>校園生態健全穩定嗎？理由為何？</li>
+                        </ul>
+                      </li>
+                      <li>針對調查結果，為學校撰寫兩項<strong>生態改善具體建議</strong>。</li>
+                      <li>完成 Canva 個人簡報並進行成果分享與互評！</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="content-right text-center">
+                  <div class="action-alert success">
+                    <i class="fa-solid fa-network-wired large-icon animate-pulse text-green"></i>
+                    <h3>從數據到行動！</h3>
+                    <p class="text-large">科學調查的終點不是報告，而是利用收集到的實物數據，為我們的環境做出友善的改變與建議！</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 20: Completing Collection Book -->
+          <section class="slide" id="slide-20" data-session="第四堂" data-ref-type="canva" data-ref-page="4">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-book-bookmark"></i> 生物收集冊：最終完整版</h2>
+              <div class="grid-2col">
+                <div class="content-left">
+                  <p class="text-large">請完成個人 Canva 簡報第 4 頁的<strong>生物收集冊</strong>以及第 6、7 頁的動物/真菌專頁。</p>
+                  <ul class="bullet-list">
+                    <li><strong>照片核對</strong>：確認每一格的照片都是你們親自拍攝，且名稱經過三方查證。</li>
+                    <li><strong>數量檢視</strong>：你們總共收集到了幾種植物？幾種動物？這兩個數據能告訴我們這個生態系的「物種多樣性」！</li>
+                    <li><strong>特徵備註</strong>：在動物和真菌旁的文字框中，簡述這隻動物是在哪裡發現的，以及牠正在做什麼（例如：螞蟻在搬運種子、蠅虎在等待獵物）。</li>
+                  </ul>
+                </div>
+                <div class="content-right">
+                  <div class="highlight-panel">
+                    <h4><i class="fa-solid fa-graduation-cap"></i> 科學分析關鍵指標：</h4>
+                    <p><strong>物種豐富度 (Richness)</strong>：在指定棲地中找到的生物總種類數。種類越多，通常代表生態系所能提供的棲地與食物來源越豐富！</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 21: Food Web Concepts -->
+          <section class="slide" id="slide-21" data-session="第四堂" data-ref-type="canva" data-ref-page="8">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-network-wired"></i> 生態系的靈魂：食物鏈與食物網</h2>
+              <div class="grid-2col">
+                <div class="content-left">
+                  <p class="text-large">在一個生態系中，生物之間透過<strong>吃與被吃</strong>的食性關係互相連結，形成能量流動的網絡。</p>
+                  
+                  <div class="interactive-box">
+                    <h4><i class="fa-solid fa-arrows-spin"></i> 組成角色：</h4>
+                    <ul class="bullet-list">
+                      <li><strong>生產者</strong>：綠色植物（如地毯草、大花咸豐草、車前草）。它們利用陽光進行光合作用製造有機養分。</li>
+                      <li><strong>消費者</strong>：
+                        <ul>
+                          <li>初級消費者（草食性）：蚜蟲、黃蝶幼蟲、蝗蟲。</li>
+                          <li>次級/三級消費者（肉食/雜食性）：蠅虎、白頭翁、綠繡眼、黑冠麻鷺。</li>
+                        </ul>
+                      </li>
+                      <li><strong>分解者</strong>：真菌（如蕈菇）、馬陸、蚯蚓。分解枯枝落葉，讓養分回歸土壤。</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="content-right">
+                  <div class="action-alert info">
+                    <h4><i class="fa-solid fa-circle-question"></i> 食物網與生態穩定的關係：</h4>
+                    <p class="text-large"><strong>食物網越複雜，生態系越穩定！</strong></p>
+                    <p>當某種生物數量減少時，捕食者能選擇其他替代食物，整個系統因而更加穩定，不易崩潰。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 22: Interactive Food Web Builder -->
+          <section class="slide" id="slide-22" data-session="第四堂" data-ref-type="canva" data-ref-page="8">
+            <div class="slide-content centered">
+              <div class="slide-badge secondary"><i class="fa-solid fa-network-wired"></i> 互動沙盒</div>
+              <h2 class="title-primary">食物網互動建構沙盒</h2>
+              <p class="subtitle-primary">點選「消費者」與其「食物來源」，成功建立所有食性連結以建構完整的校園食物網！</p>
+
+              <!-- Food Web Canvas Sandbox Component -->
+              <div class="food-web-sandbox">
+                <svg id="food-web-svg" class="food-web-svg"></svg>
+                <div class="nodes-container" id="food-web-nodes">
+                  <!-- Nodes (Sun, Plants, Herbivores, Carnivores) will be placed here -->
+                </div>
+                <div class="sandbox-controls">
+                  <button class="btn-control" id="btn-reset-web"><i class="fa-solid fa-rotate-left"></i> 重置食物網</button>
+                  <div class="web-status" id="web-status">已建立 0 條能量流動路徑</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 23: Ecological Analysis -->
+          <section class="slide" id="slide-23" data-session="第四堂" data-ref-type="canva" data-ref-page="8">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-chart-line"></i> 生態分析與評價討論</h2>
+              <p class="text-large">請根據調查數據與實測結果，思考並回答 Canva 簡報第 8 頁的三大生態分析難題：</p>
+              
+              <div class="analysis-grid">
+                <div class="analysis-card">
+                  <div class="card-num">Q1</div>
+                  <h4>東興國中的校園食物網複雜嗎？理由為何？</h4>
+                  <p><strong>思考方向：</strong>從你們在該指定棲地找到的生產者（植物種數）與消費者數量來看，生物種類是單一還是多元？食性連線多嗎？</p>
+                </div>
+                <div class="analysis-card">
+                  <div class="card-num">Q2</div>
+                  <h4>東興國中的生態健全穩定嗎？理由為何？</h4>
+                  <p><strong>思考方向：</strong>除了種類數量，還要考慮非生物因子（例如是否有光照不足、完全水泥化導致無土壤等環境破壞，或者局部測出強酸性 pH 等環境變因）？</p>
+                </div>
+                <div class="analysis-card">
+                  <div class="card-num">Q3</div>
+                  <h4>為什麼要在校園建立自然生態？有什麼好處？</h4>
+                  <p><strong>思考方向：</strong>除了美觀，是否能作為都市中的「微型生態跳島」？是否能協助調節微氣候（降低溫度、增加濕度）？</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 24: Assessment Rubrics -->
+          <section class="slide" id="slide-24" data-session="第四堂" data-ref-type="canva" data-ref-page="9">
+            <div class="slide-content">
+              <h2 class="slide-title"><i class="fa-solid fa-lightbulb"></i> 生態建議與具體改進行動</h2>
+              <div class="grid-2col">
+                <div class="content-left">
+                  <p class="text-large">經過科學調查與分析後，請集思廣益，為學校提出兩項具體的<strong>校園生態改善行動建議</strong>（填入 Canva 簡報第 9 頁）：</p>
+                  
+                  <div class="interactive-box mission">
+                    <h4><i class="fa-solid fa-clipboard-list"></i> 優良建議評分標準：</h4>
+                    <ul class="bullet-list">
+                      <li><strong>具體可行性</strong>：不是太空泛的「多種樹」，而是具體寫出「在背陰潮濕且土壤微酸的區域種植耐陰本土蕨類，減少表土流失」。</li>
+                      <li><strong>基於數據支持</strong>：利用你們測量到的數據，例如「因為測量到部分水泥化地面無遮蔽，溫度高達 34°C，建議增設攀爬植物綠牆，以達降溫與遮陽效果」。</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="content-right">
+                  <div class="highlight-panel">
+                    <h4><i class="fa-solid fa-seedling"></i> 校園生態改進好點子參考：</h4>
+                    <ul class="bullet-list">
+                      <li><strong>減少人工割草頻率</strong>：允許部分校園角落維持草冠層生長，為昆蟲提供繁殖和庇護所。</li>
+                      <li><strong>建立枯木與落葉堆肥區</strong>：不把落葉當垃圾清運，堆積在林下，為馬陸、蚯蚓及真菌建立豐富的分解棲地。</li>
+                      <li><strong>改植本土蜜源植物</strong>：吸引蝴蝶與蜜蜂，活化傳粉生態。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 25: Course Wrap-up & Reflection -->
+          <section class="slide" id="slide-25" data-session="第四堂" data-ref-type="canva" data-ref-page="9">
+            <div class="slide-content centered">
+              <div class="slide-badge success"><i class="fa-solid fa-trophy"></i> 課程終點</div>
+              <h2 class="title-primary">探索落幕，守護啟航！</h2>
+              <p class="subtitle-primary">恭喜完成 4 堂課的校園生態大冒險！你們已經是合格的校園生態守護者。</p>
+
+              <div class="reflection-container">
+                <div class="reflection-card text-left">
+                  <h4><i class="fa-solid fa-quote-left color-green"></i> 課後反思卡</h4>
+                  <ul class="bullet-list-large">
+                    <li><strong>科學精神</strong>：面對 AI 的便利，學會了不盲信，而是以實物形態和可靠資料庫進行「三方查證」。</li>
+                    <li><strong>環境關懷</strong>：理解了非生物因子與生物的緊密相依，並親自為腳下的土地提出了生態改善建議。</li>
+                    <li><strong>個人發表</strong>：從實地考察、照片記錄到個人 Canva 簡報製作，全面收穫探究與實作的完整歷程！</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="tips-bar warning margin-top-20">
+                <p><i class="fa-solid fa-cloud-arrow-up animate-bounce"></i> <strong>最後一步：</strong>請將 Canva 簡報匯出成 PDF，或分享公開編輯連結上傳到 Classroom 個人作業區，準備開始成果展示發表！</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Animal Lightbox Modal Overlay -->
+          <div class="modal-overlay" id="animal-modal">
+            <div class="modal-card-content">
+              <div class="modal-left">
+                <img src="" id="modal-img" alt="生物照片" class="modal-animal-img">
+                <i class="fa-solid fa-spider" id="modal-icon" style="display: none;"></i>
+              </div>
+              <div class="modal-right">
+                <div class="modal-title-row">
+                  <h3 class="modal-title" id="modal-title">生物名稱</h3>
+                  <span class="modal-category-badge" id="modal-cat">分類</span>
+                </div>
+                <p class="modal-description" id="modal-desc">這裡將顯示該生物的詳細生態特徵與生活習性描述。</p>
+                <button class="modal-close-btn" id="btn-close-modal">
+                  <i class="fa-solid fa-arrow-left-long"></i> 返回圖鑑
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+      <!-- Right Sidebar: Teacher Reference Page (Textbook / Student Canva Page) -->
+      <aside class="ref-drawer" id="ref-drawer">
+        <div class="ref-drawer-header">
+          <h3><i class="fa-solid fa-eye"></i> 教學同步對照指引</h3>
+          <button id="close-ref" class="btn-icon-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <!-- Tab Selectors -->
+        <div class="ref-tabs">
+          <button class="ref-tab active" id="tab-canva"><i class="fa-solid fa-images"></i> 學生 Canva 模板</button>
+          <button class="ref-tab" id="tab-textbook"><i class="fa-solid fa-book-open"></i> 課本參考頁</button>
+        </div>
+
+        <div class="ref-viewer-content">
+          <!-- Live Aligned Page Indicator -->
+          <div class="ref-aligned-badge" id="ref-aligned-status">
+            與當前 Slide 同步中：<span id="ref-page-name">Canva 第 1 頁</span>
+          </div>
+
+          <!-- Image Display Container -->
+          <div class="ref-image-wrapper">
+            <img src="images/canva_page_1.png" alt="對照參考頁面" id="ref-display-image">
+          </div>
+
+          <!-- Helper Explanations based on currently displayed reference -->
+          <div class="ref-guide-notes" id="ref-guide-notes">
+            <h4><i class="fa-solid fa-chalkboard-user"></i> 教師導學要點：</h4>
+            <p id="ref-notes-text">引導學生登入 Canva，複製小組簡報範本，填寫班級、座號與姓名。並開啟討論「你們覺得校園生態好嗎？」。</p>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- Bottom Controls & Tool Shortcuts -->
+    <footer class="app-footer">
+      <div class="footer-left">
+        <div class="footer-shortcut-label">互動工具快捷鍵：</div>
+        <button class="btn-shortcut" onclick="window.appNavigate(5)"><i class="fa-solid fa-stopwatch"></i> 15分探索</button>
+        <button class="btn-shortcut" onclick="window.appNavigate(11)"><i class="fa-solid fa-seedling"></i> 植物特徵遊戲</button>
+        <button class="btn-shortcut" onclick="window.appNavigate(15)"><i class="fa-solid fa-flask"></i> pH虛擬實驗室</button>
+        <button class="btn-shortcut" onclick="window.appNavigate(17)"><i class="fa-solid fa-images"></i> 常見動物展廊</button>
+        <button class="btn-shortcut" onclick="window.appNavigate(18)"><i class="fa-solid fa-stopwatch"></i> 20分環境收集</button>
+        <button class="btn-shortcut" onclick="window.appNavigate(22)"><i class="fa-solid fa-network-wired"></i> 食物網沙盒</button>
+      </div>
+
+      <div class="footer-right">
+        <span class="keyboard-tips"><i class="fa-solid fa-keyboard"></i> 支援方向鍵 ← → 切換 Slide</span>
+        <button id="btn-fullscreen" class="btn-icon-footer" title="全螢幕模式 (鍵盤 F)">
+          <i class="fa-solid fa-expand"></i>
+        </button>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
